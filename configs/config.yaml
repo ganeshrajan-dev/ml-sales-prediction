@@ -1,0 +1,57 @@
+# ============================================
+# ML Pipeline Configuration
+# Change values here — all scripts read this
+# ============================================
+
+project:
+  name: "adidas-sales-channel-predictor"
+  version: "v1"
+
+# Where is the raw data?
+data:
+  raw_source: "s3://adidas-sales-mlops-project/data/raw/raw-dataset.csv"
+  raw_local: "data/raw/sales_data.csv"
+  validated_local: "data/validated/sales_data_validated.csv"
+  processed_local: "data/processed/sales_data_processed.csv"
+
+# Feature engineering settings
+features:
+  target_column: "Sales Method"
+  categorical_columns:
+    - "Retailer"
+    - "Region"
+    - "State"
+    - "City"
+    - "Product"
+  numerical_columns:
+    - "Price per Unit"
+    - "Units Sold"
+    - "Total Sales"
+    - "Operating Profit"
+
+# Model training settings
+model:
+  algorithm: "XGBClassifier"
+  version: "v1"
+  params:
+    n_estimators: 200
+    max_depth: 6
+    learning_rate: 0.1
+    random_state: 42
+
+# What score is needed to pass?
+evaluation:
+  test_size: 0.2
+  min_accuracy: 0.80
+  min_f1_score: 0.75
+
+# MLflow server address (we'll set this up later)
+mlflow:
+  tracking_uri: "http://100.55.133.144:5000"
+  experiment_name: "adidas-sales-prediction"
+
+# AWS settings
+aws:
+  region: "us-east-1"
+  s3_bucket: "adidas-sales-mlops-project"
+  ecr_repo: "ml-sales-prediction"

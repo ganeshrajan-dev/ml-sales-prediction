@@ -1,0 +1,53 @@
+{
+  "feature_columns": [
+    "Retailer_enc",
+    "Region_enc",
+    "State_enc",
+    "City_enc",
+    "Product_enc",
+    "Price per Unit",
+    "Units Sold",
+    "Total Sales",
+    "Operating Profit",
+    "Profit_Margin",
+    "Revenue_Per_Unit",
+    "Month",
+    "DayOfWeek",
+    "Quarter",
+    "IsWeekend"
+  ],
+  "target_column": "Target",
+  "target_mapping": {
+    "In-store": 0,
+    "Online": 1,
+    "Outlet": 2
+  },
+  "categorical_columns": [
+    "Retailer",
+    "Region",
+    "State",
+    "City",
+    "Product"
+  ],
+  "categorical_encoded": [
+    "Retailer_enc",
+    "Region_enc",
+    "State_enc",
+    "City_enc",
+    "Product_enc"
+  ],
+  "numerical_columns": [
+    "Price per Unit",
+    "Units Sold",
+    "Total Sales",
+    "Operating Profit",
+    "Profit_Margin",
+    "Revenue_Per_Unit"
+  ],
+  "time_features": [
+    "Month",
+    "DayOfWeek",
+    "Quarter",
+    "IsWeekend"
+  ]
+}

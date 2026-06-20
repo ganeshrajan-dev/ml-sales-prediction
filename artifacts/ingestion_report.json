@@ -1,0 +1,36 @@
+{
+  "stage": "data_ingestion",
+  "timestamp": "2026-06-20T14:30:08.670375",
+  "source": "s3://adidas-sales-mlops-project/data/raw/raw-dataset.csv",
+  "output": "data/raw/sales_data.csv",
+  "records": 9641,
+  "columns": [
+    "Retailer",
+    "Retailer ID",
+    "Invoice Date",
+    "Region",
+    "State",
+    "City",
+    "Product",
+    "Price per Unit",
+    "Units Sold",
+    "Total Sales",
+    "Operating Profit",
+    "Sales Method"
+  ],
+  "nulls": {
+    "Retailer": 0,
+    "Retailer ID": 0,
+    "Invoice Date": 0,
+    "Region": 0,
+    "State": 0,
+    "City": 0,
+    "Product": 0,
+    "Price per Unit": 2,
+    "Units Sold": 0,
+    "Total Sales": 0,
+    "Operating Profit": 0,
+    "Sales Method": 0
+  },
+  "status": "SUCCESS"
+}

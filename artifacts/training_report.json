@@ -1,0 +1,28 @@
+{
+  "stage": "training",
+  "timestamp": "2026-06-20T20:32:04.803287",
+  "model_version": "v1",
+  "mlflow_run_id": "a06bd6c673cd4005b189776f0efd4ad1",
+  "mlflow_uri": "http://54.81.247.132:5000",
+  "metrics": {
+    "accuracy": 0.9647,
+    "f1_weighted": 0.9648,
+    "cv_accuracy_mean": 0.6886,
+    "cv_accuracy_std": 0.1462
+  },
+  "parameters": {
+    "n_estimators": 200,
+    "max_depth": 6,
+    "learning_rate": 0.1,
+    "random_state": 42
+  },
+  "feature_importance_top5": {
+    "Revenue_Per_Unit": 0.3755,
+    "Region_enc": 0.1328,
+    "State_enc": 0.1245,
+    "Retailer_enc": 0.0689,
+    "City_enc": 0.0676
+  },
+  "training_time_seconds": 2.81,
+  "status": "SUCCESS"
+}

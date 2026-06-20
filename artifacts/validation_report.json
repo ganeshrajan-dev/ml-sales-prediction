@@ -1,0 +1,42 @@
+{
+  "stage": "data_validation",
+  "timestamp": "2026-06-20T15:29:44.361504",
+  "input": "data/raw/sales_data.csv",
+  "output": "data/validated/sales_data_validated.csv",
+  "records_in": 9639,
+  "records_out": 9639,
+  "quality_score": 1.0,
+  "checks": [
+    {
+      "check": "schema",
+      "passed": true,
+      "detail": "All columns present"
+    },
+    {
+      "check": "null_threshold",
+      "passed": true,
+      "detail": "Max null: 0.02% (limit: 5%)"
+    },
+    {
+      "check": "no_negatives",
+      "passed": true,
+      "detail": "No negatives"
+    },
+    {
+      "check": "target_values",
+      "passed": true,
+      "detail": "Found: ['In-store', 'Outlet', 'Online']"
+    },
+    {
+      "check": "duplicates",
+      "passed": true,
+      "detail": "Duplicates: 0 (0.0%)"
+    },
+    {
+      "check": "min_volume",
+      "passed": true,
+      "detail": "Rows: 9641 (minimum: 1000)"
+    }
+  ],
+  "status": "PASSED"
+}
