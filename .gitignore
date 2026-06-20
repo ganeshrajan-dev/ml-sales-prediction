@@ -1,0 +1,25 @@
+# Data files (too large for GitHub, stay in S3)
+data/
+*.csv
+
+# Model artifacts (stored in S3/ECR, not GitHub)
+model/*.pkl
+model/*.tar.gz
+model/X_test.csv
+model/y_test.csv
+
+# MLflow local runs
+mlruns/
+
+# Artifacts/reports (generated, not source code)
+artifacts/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
