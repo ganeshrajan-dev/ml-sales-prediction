@@ -13,7 +13,7 @@ pipeline {
         stage('Checkout'){
             steps{
                 echo "PUlling code from GIT"
-                Checkout scm
+                checkout scm
             }
         }
 
