@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sales-predictor
+  labels:
+    app: sales-predictor
+spec:
+  type: LoadBalancer
+  selector:
+    app: sales-predictor
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
