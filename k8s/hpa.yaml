@@ -1,5 +1,6 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
+
 metadata:
   name: sales-predictor
   labels:
@@ -10,13 +11,14 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: sales-predictor
+
   minReplicas: 2
   maxReplicas: 5
+
   metrics:
-    - type: Resources
-      resources:
+    - type: Resource
+      resource:
         name: cpu
         target:
           type: Utilization
           averageUtilization: 70
-          
