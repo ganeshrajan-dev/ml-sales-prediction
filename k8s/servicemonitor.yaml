@@ -1,0 +1,18 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadat:
+  name: sales-predictor-monitor
+  labels:
+    release: monitoring
+
+spec:
+  namespaceSelector:
+    matchNames:
+      - default
+  selector:
+    matchLabels:
+      app: sales-predictor
+  endpoints:
+    - port: "80"
+      path: /metrics
+      interval: 15s
