@@ -6,7 +6,7 @@ pipeline {
         ECR_REPO = '049559537457.dkr.ecr.us-east-1.amazonaws.com/adidas-sales-predictor'
         IMAGE_TAG = "v${BUILD_NUMBER}"
         EKS_CLUSTER = 'adidas-ml-cluster'
-         MLFLOW_URI = 'http://54.81.247.132:5000'
+        MLFLOW_URI = 'http://44.211.229.174:5000'
     }
 
     stages{
