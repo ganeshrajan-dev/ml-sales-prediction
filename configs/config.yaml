@@ -47,7 +47,7 @@ evaluation:
 
 # MLflow server address (we'll set this up later)
 mlflow:
-  tracking_uri: "http://44.211.229.174:5000"
+  tracking_uri: "http://100.31.134.18:5000"
   experiment_name: "adidas-sales-prediction"
 
 # AWS settings

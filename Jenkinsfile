@@ -75,7 +75,7 @@ pipeline {
             }
         }
         stage('Evaluate Model'){
-            stpes{
+            steps{
                 sh '''
                     . venv/bin/activate
                     python src/evaluate.py
@@ -84,7 +84,7 @@ pipeline {
         }
         stage('Register Model'){
             when{
-                anyof {
+                anyOf {
                     branch 'dev'
                     branch 'main'
                 }
@@ -98,7 +98,7 @@ pipeline {
         }
         stage('Docker Build'){
             when{
-                anyof{
+                anyOf{
                     branch 'dev'
                     branch 'main'
                 }
@@ -112,7 +112,7 @@ pipeline {
         }
         stage('Push to ECR'){
             when{
-                anyof{
+                anyOf{
                     branch 'dev'
                     branch 'main'
                 }
@@ -127,7 +127,7 @@ pipeline {
         }
         stage('Deploy to EKS'){
             when{
-                anyof{
+                anyOf{
                     branch 'dev'
                     branch 'main'
                 }
@@ -146,10 +146,11 @@ pipeline {
             echo "Pipeline completed for branch: ${BRANCH_NAME}"
         }
         failure{
-            echo"Pipeline failed for branch: ${BRANCH_NAME}"
+            echo "Pipeline failed for branch: ${BRANCH_NAME}"
         }
         always{
             sh 'docker system prune -f || true'
+            cleanWs()
         }
     }
 }
