@@ -38,7 +38,7 @@ pipeline {
                 sh '''
                     python3 -m venv venv
                     . venv/bin/activate
-                    pip install --quiet pandas numpy scikit-learn xgboost joblib pyyaml mlflow boto3 s3fs sagemaker
+                    pip install --quiet pandas numpy scikit-learn xgboost joblib pyyaml mlflow boto3 s3fs "sagemaker<3"
                 '''
             }
         }
